@@ -1,0 +1,12 @@
+- id: citta
+  name: { kor: 마음, pli: citta, en: Citta }
+  description: { kor: 마음의 종류와 작용을 살펴봅니다. }
+  itemName: { kor: 마음, pli: citta, en: citta }
+  itemsFile: citta.yaml
+  classificationsFile: citta-classification.yaml
+- id: cetasika
+  name: { kor: 마음부수, pli: cetasika, en: Cetasika }
+  description: { kor: 마음과 함께 일어나는 마음부수의 지도를 준비하고 있습니다. }
+  itemName: { kor: 마음부수, pli: cetasika, en: cetasika }
+  itemsFile: cetasika.yaml
+  classificationsFile: cetasika-classification.yaml
