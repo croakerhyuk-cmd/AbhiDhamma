@@ -77,7 +77,11 @@ function groupValue(classificationId: string, kor: string): string {
 }
 
 function readYaml<T>(file: string): T {
-  return load(fs.readFileSync(path.join(process.cwd(), 'data', file), 'utf8')) as T;
+  const filePath = path.join(process.cwd(), 'data', file);
+  if (!fs.existsSync(filePath)) {
+    throw new Error(`YAML 데이터 파일을 찾을 수 없습니다: data/${file}. 파일 경로와 dhamma_group 설정을 확인하세요.`);
+  }
+  return load(fs.readFileSync(filePath, 'utf8')) as T;
 }
 
 function readItems(file: string) {
@@ -106,13 +110,14 @@ export function getExplorerDatasets(): ExplorerDataset[] {
   const categories = z.array(datasetSchema).parse(readYaml<unknown>('datasets.yaml'));
   return categories.map((category) => {
     const indexFile = `dhamma_group/${category.id}.yaml`;
-    let entries: Array<{ id: string; name?: z.infer<typeof localeSchema>; item: string; classification: string }> = [];
-    try { entries = z.array(z.object({ id: z.string(), name: localeSchema.optional(), item: z.string(), classification: z.string() })).parse(readYaml<unknown>(indexFile)); } catch { /* A category may not have groups yet. */ }
+    let entries: Array<{ id: string; name?: { kor: string; pli?: string; en?: string }; item: string; classification: string }> = [];
+    try { entries = z.array(z.object({ id: z.string(), name: z.object({ kor: z.string(), pli: z.string().optional(), en: z.string().optional() }).optional(), item: z.string(), classification: z.string() })).parse(readYaml<unknown>(indexFile)); } catch { /* A category may not have groups yet. */ }
     const groups = entries.map((entry) => {
       const items = readItems(entry.item);
       const classifications = readClassifications(entry.classification);
+      const groupName = entry.name?.kor || entry.id;
       return {
-        id: entry.id, name: entry.name ?? { kor: entry.id, pli: entry.id, en: entry.id }, description: { kor: '' },
+        id: entry.id, name: { kor: groupName, pli: entry.name?.pli || entry.id, en: entry.name?.en || entry.id }, description: { kor: '' },
         itemName: locale(category.itemName ?? category.itemLabel!), items, classifications,
         itemFile: entry.item, classificationFile: entry.classification,
       } satisfies ExplorerDataset;

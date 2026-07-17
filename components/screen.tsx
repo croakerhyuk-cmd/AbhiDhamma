@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, LayoutGroup, motion, useReducedMotion } from 'framer-motion';
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { ArrowUpRight, Brain, Search, X } from 'lucide-react';
 import { useMemo, useState } from 'react';
 import type { ExplorerDataset, ExplorerItem, ClassificationGroup } from '@/lib/types';
@@ -21,12 +21,13 @@ export function Screen({ datasets }: { datasets: ExplorerDataset[] }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const reduceMotion = useReducedMotion();
   const classification = classifications.find((item) => item.id === classificationId) ?? classifications[0];
+  const dhammaGroupNames = new Map((dataset?.dhammaGroups ?? []).map((group) => [group.id, group.name.kor]));
   const filtered = useMemo(() => {
     const normalized = query.trim().toLowerCase();
     if (!normalized) return cittas;
     return cittas.filter((citta) => `${citta.name.kor} ${citta.name.pli} ${citta.name.en}`.toLowerCase().includes(normalized));
   }, [cittas, query]);
-  const groups = useMemo(() => classification ? groupItems(filtered, classification, scopeId).filter((group) => group.items.length > 0) : [], [filtered, classification, scopeId]);
+  const groups = useMemo(() => classification ? groupItems(filtered, classification, scopeId) : [], [filtered, classification, scopeId]);
 
   function cardVisual(item: ExplorerItem) {
     const primary = Object.values(item.groups)[0];
@@ -80,7 +81,7 @@ export function Screen({ datasets }: { datasets: ExplorerDataset[] }) {
       <div className={`explorer-body ${sidebarOpen ? '' : 'sidebar-collapsed'}`}>
         <aside id="dataset-sidebar" className="dataset-sidebar" aria-label="탐색할 항목 선택">
           <span className="sidebar-label">탐색 대상</span>
-          <div className="dataset-tabs">{datasets.filter((item) => !item.parentId).map((item) => <div key={item.id}><button className={item.id === datasetId ? 'dataset-tab active' : 'dataset-tab'} onClick={() => changeDataset(item.id)}>{item.name.kor}</button>{item.id === datasetId ? item.dhammaGroups?.map((group) => <button key={group.id} className={group.id === groupId ? 'dataset-child active' : 'dataset-child'} onClick={() => changeGroup(group.id)}>{group.name.kor}</button>) : null}</div>)}</div>
+          <div className="dataset-tabs">{datasets.filter((item) => !item.parentId).map((item) => <button key={item.id} className={item.id === datasetId ? 'dataset-tab active' : 'dataset-tab'} onClick={() => changeDataset(item.id)}>{item.name.kor}</button>)}</div>
         </aside>
         <button className="sidebar-toggle" type="button" onClick={() => setSidebarOpen((open) => !open)} aria-expanded={sidebarOpen} aria-controls="dataset-sidebar">
           <span aria-hidden="true">{sidebarOpen ? '‹' : '›'}</span>
@@ -91,14 +92,12 @@ export function Screen({ datasets }: { datasets: ExplorerDataset[] }) {
           <div className="classification-row"><div><span className="control-label">분류기준</span><div className="classification-tabs">{classifications.map((item) => <button key={item.id} className={item.id === classificationId ? 'tab active' : 'tab'} onClick={() => changeClassification(item.id)}><span>{item.name.kor}</span>{item.id === classificationId && <ArrowUpRight size={15} />}</button>)}</div></div><label className="search-box"><Search size={17} /><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder={`${dataset?.itemName.kor ?? '항목'} 이름을 검색해보세요`} aria-label={`${dataset?.itemName.kor ?? '항목'} 검색`} />{query && <button aria-label="검색어 지우기" onClick={() => setQuery('')}><X size={15} /></button>}</label></div>
         </section>
 
-        <LayoutGroup id="citta-atlas">
-          <motion.div className="groups-list" layout transition={{ layout: { duration: reduceMotion ? 0 : 0.8, ease: [0.22, 1, 0.36, 1] } }}>
-              {groups.map((group) => <motion.section key={group.id} layout className="group-section" transition={{ layout: { duration: reduceMotion ? 0 : 0.8, ease: [0.22, 1, 0.36, 1] } }}>
-                <button type="button" className={`group-heading ${scopeId === group.id ? 'active' : ''}`} onClick={() => openGroup(group.id)} aria-pressed={scopeId === group.id}><div className="group-title"><div><div className="group-label"><span>{group.name.kor}</span><span className="group-count">{group.items.length}</span></div></div></div><div className="group-rule" /></button>
-                <motion.div layout className="citta-grid" transition={{ layout: { duration: reduceMotion ? 0 : 0.72, ease: [0.22, 1, 0.36, 1] } }}>{group.items.map((item) => { const { BhumiIcon, bhumiClassName, jatiColor } = cardVisual(item); return <motion.button layout="position" layoutId={`${dataset.id}-${item.key}`} key={item.key} className={`citta-card ${selected?.key === item.key ? 'selected' : ''}`} style={{ borderColor: jatiColor }} onClick={() => setSelected(item)} whileHover={reduceMotion ? undefined : { y: -5 }} whileTap={reduceMotion ? undefined : { scale: 0.98 }} transition={{ layout: { duration: reduceMotion ? 0 : 0.72, ease: [0.22, 1, 0.36, 1] } }}><div className="card-top"><span className="number">{item.key.replace(`${dataset.id}-`, '').replace('citta-', '').padStart(2, '0')}</span><span className={`card-icon ${bhumiClassName}`}><BhumiIcon size={20} /></span></div><span className="card-name">{item.name.kor}</span><span className="card-pali">{item.name.pli}</span><span className="card-arrow"><ArrowUpRight size={15} /></span></motion.button>; })}</motion.div>
-              </motion.section>)}
-          </motion.div>
-        </LayoutGroup>
+        <div className="groups-list">
+            {groups.map((group) => <section key={group.id} className="group-section">
+              <button type="button" className={`group-heading ${scopeId === group.id ? 'active' : ''}`} onClick={() => openGroup(group.id)} aria-pressed={scopeId === group.id}><div className="group-title"><div><div className="group-label"><span>{dhammaGroupNames.get(group.id) ?? group.name.kor}</span><span className="group-count">{group.items.length}</span></div></div></div><div className="group-rule" /></button>
+              <div className="citta-grid">{group.items.length > 0 ? group.items.map((item) => { const { BhumiIcon, bhumiClassName, jatiColor } = cardVisual(item); return <motion.button key={item.key} className={`citta-card ${selected?.key === item.key ? 'selected' : ''}`} style={{ borderColor: jatiColor }} onClick={() => setSelected(item)} whileHover={reduceMotion ? undefined : { y: -5 }} whileTap={reduceMotion ? undefined : { scale: 0.98 }}><div className="card-top"><span className="number">{item.key.replace(`${dataset.id}-`, '').replace('citta-', '').padStart(2, '0')}</span><span className={`card-icon ${bhumiClassName}`}><BhumiIcon size={20} /></span></div><span className="card-name">{item.name.kor}</span><span className="card-pali">{item.name.pli}</span><span className="card-arrow"><ArrowUpRight size={15} /></span></motion.button>; }) : <><div className="citta-card citta-card-empty" aria-hidden="true" /><div className="citta-card citta-card-empty" aria-hidden="true" /></>}</div>
+              </section>)}
+            </div>
       </main>
       </div>
 

@@ -16,218 +16,169 @@
     en: ''
   groups: {citta, kammavacara, akusala}
 
-# - name:
-#     kor: 즐거움과 함께하고 사견과 결합하지 않은 형성 있는 마음
-#     pli: ''
-#     en: ''
-#   groups:
-#     bhumi: kama
-#     jati: akusala
-
-# - name:
-#     kor: 평온과 함께하고 사견과 결합한 형성 없는 마음
-#     pli: ''
-#     en: ''
-#   groups:
-#     bhumi: kama
-#     jati: akusala
-
-# - name:
-#     kor: 평온과 함께하고 사견과 결합한 형성 있는 마음
-#     pli: ''
-#     en: ''
-#   groups:
-#     bhumi: kama
-#     jati: akusala
-
-# - name:
-#     kor: 평온과 함께하고 사견과 결합하지 않은 형성 없는 마음
-#     pli: ''
-#     en: ''
-#   groups:
-#     bhumi: kama
-#     jati: akusala
-
-# - name:
-#     kor: 평온과 함께하고 사견과 결합하지 않은 형성 있는 마음
-#     pli: ''
-#     en: ''
-#   groups:
-#     bhumi: kama
-#     jati: akusala
-
-# - name:
-#     kor: 근심과 함께하고 적의와 결합한 형성 없는 마음
-#     pli: ''
-#     en: ''
-#   groups:
-#     bhumi: kama
-#     jati: akusala
-
-# - name:
-#     kor: 근심과 함께하고 적의와 결합한 형성 있는 마음
-#     pli: ''
-#     en: ''
-#   groups: 
-#     bhumi: kama
-#     jati: akusala
-
-# - name:
-#     kor: 평온과 함께하고 의심과 결합한 마음
-#     pli: ''
-#     en: ''
-#   groups:
-#     bhumi: kama
-#     jati: akusala
-
-# - name:
-#     kor: 평온과 함께하고 들뜸과 결합한 마음
-#     pli: ''
-#     en: ''
-#   groups: 
-#     bhumi: kama
-#     jati: akusala
-
-# - name:
-#     kor: 평온과 함께하는 눈 의식 마음
-#     pli: ''
-#     en: ''
-#   groups:
-#     bhumi: kama
-#     jati: akusala_vipaka
-
-# - name:
-#     kor: 평온과 함께하는 귀 의식 마음
-#     pli: ''
-#     en: ''
-#   groups:
-#     bhumi: kama
-#     jati: akusala_vipaka
+- name:
+    kor: 즐거움과 함께하고 사견과 결합하지 않은 형성 있는 마음
+    pli: ''
+    en: ''
+  groups: {citta, kammavacara, akusala}
     
-# - name:
-#     kor: 평온과 함께하는 코 의식 마음
-#     pli: ''
-#     en: ''
-#   groups:
-#     bhumi: kama
-#     jati: akusala_vipaka
-  
-# - name:
-#     kor: 평온과 함께하는 혀 의식 마음
-#     pli: ''
-#     en: ''
-#   groups:
-#     bhumi: kama
-#     jati: akusala_vipaka
+- name:
+    kor: 평온과 함께하고 사견과 결합한 형성 없는 마음
+    pli: ''
+    en: ''
+  groups: {citta, kammavacara, akusala}
 
-# - name:
-#     kor: 고통과 함께하는 몸 의식 마음
-#     pli: ''
-#     en: ''
-#   groups:
-#     bhumi: kama
-#     jati: akusala_vipaka
-  
-# - name:
-#     kor: 평온과 함께하는 접수 마음
-#     pli: ''
-#     en: ''
-#   groups:
-#     bhumi: kama
-#     jati: akusala_vipaka
 
-# - name:
-#     kor: 평온과 함께하는 조사 마음
-#     pli: ''
-#     en: ''
-#   groups:
-#     bhumi: kama
-#     jati: akusala_vipaka
-
-# - name:
-#     kor: 평온과 함께하는 눈 의식 마음
-#     pli: ''
-#     en: ''
-#   groups:
-#     bhumi: kama
-#     jati: kusala_vipaka
-
-# - name:
-#     kor: 평온과 함께하는 귀 의식 마음
-#     pli: ''
-#     en: ''
-#   groups:
-#     bhumi: kama
-#     jati: kusala_vipaka
+- name:
+    kor: 평온과 함께하고 사견과 결합한 형성 있는 마음
+    pli: ''
+    en: ''
+  groups: {citta, kammavacara, akusala}
     
-# - name:
-#     kor: 평온과 함께하는 코 의식 마음
-#     pli: ''
-#     en: ''
-#   groups:
-#     bhumi: kama
-#     jati: kusala_vipaka
+
+- name:
+    kor: 평온과 함께하고 사견과 결합하지 않은 형성 없는 마음
+    pli: ''
+    en: ''
+  groups: {citta, kammavacara, akusala}
+    
+
+- name:
+    kor: 평온과 함께하고 사견과 결합하지 않은 형성 있는 마음
+    pli: ''
+    en: ''
+  groups: {citta, kammavacara, akusala}
+    
+
+- name:
+    kor: 근심과 함께하고 적의와 결합한 형성 없는 마음
+    pli: ''
+    en: ''
+  groups: {citta, kammavacara, akusala}
+
+
+- name:
+    kor: 근심과 함께하고 적의와 결합한 형성 있는 마음
+    pli: ''
+    en: ''
+  groups: {citta, kammavacara, akusala}
+
+- name:
+    kor: 평온과 함께하고 의심과 결합한 마음
+    pli: ''
+    en: ''
+  groups: {citta, kammavacara, akusala}
+
+- name:
+    kor: 평온과 함께하고 들뜸과 결합한 마음
+    pli: ''
+    en: ''
+  groups: {citta, kammavacara, akusala}
+
+- name:
+    kor: 평온과 함께하는 눈 의식 마음
+    pli: ''
+    en: ''
+  groups: {citta, kammavacara, akusala_vipaka}
+
+- name:
+    kor: 평온과 함께하는 귀 의식 마음
+    pli: ''
+    en: ''
+  groups: {citta, kammavacara, akusala_vipaka}
+    
+- name:
+    kor: 평온과 함께하는 코 의식 마음
+    pli: ''
+    en: ''
+  groups: {citta, kammavacara, akusala_vipaka}
   
-# - name:
-#     kor: 평온과 함께하는 혀 의식 마음
-#     pli: ''
-#     en: ''
-#   groups:
-#     bhumi: kama
-#     jati: kusala_vipaka
+- name:
+    kor: 평온과 함께하는 혀 의식 마음
+    pli: ''
+    en: ''
+  groups: {citta, kammavacara, akusala_vipaka}
 
-# - name:
-#     kor: 행복과 함께하는 몸 의식 마음
-#     pli: ''
-#     en: ''
-#   groups:
-#     bhumi: kama
-#     jati: kusala_vipaka
+- name:
+    kor: 고통과 함께하는 몸 의식 마음
+    pli: ''
+    en: ''
+  groups: {citta, kammavacara, akusala_vipaka}
   
-# - name:
-#     kor: 평온과 함께하는 접수 마음
-#     pli: ''
-#     en: ''
-#   groups:
-#     bhumi: kama
-#     jati: kusala_vipaka
+- name:
+    kor: 평온과 함께하는 접수 마음
+    pli: ''
+    en: ''
+  groups: {citta, kammavacara, akusala_vipaka}
 
-# - name:
-#     kor: 즐거움과 함께하는 조사 마음
-#     pli: ''
-#     en: ''
-#   groups:
-#     bhumi: kama
-#     jati: kusala_vipaka
+- name:
+    kor: 평온과 함께하는 조사 마음
+    pli: ''
+    en: ''
+  groups: {citta, kammavacara, akusala_vipaka}
 
-# - name:
-#     kor: 평온과 함께하는 조사 마음
-#     pli: ''
-#     en: ''
-#   groups:
-#     bhumi: kama
-#     jati: kusala_vipaka
+- name:
+    kor: 평온과 함께하는 눈 의식 마음
+    pli: ''
+    en: ''
+  groups: {citta, kammavacara, kusala_vipaka}
 
-# - name:
-#     kor: 평온과 함께하는 오문전향 마음
-#     pli: ''
-#     en: ''
-#   groups:
-#     bhumi: kama
-#     jati: kiriya
+- name:
+    kor: 평온과 함께하는 귀 의식 마음
+    pli: ''
+    en: ''
+  groups: {citta, kammavacara, kusala_vipaka}
+    
+- name:
+    kor: 평온과 함께하는 코 의식 마음
+    pli: ''
+    en: ''
+  groups: {citta, kammavacara, kusala_vipaka}
+  
+- name:
+    kor: 평온과 함께하는 혀 의식 마음
+    pli: ''
+    en: ''
+  groups: {citta, kammavacara, kusala_vipaka}
 
-# - name:
-#     kor: 평온과 함께하는 맘문전향 마음
-#     pli: ''
-#     en: ''
-#   groups:
-#     bhumi: kama
-#     jati: kiriya
+- name:
+    kor: 행복과 함께하는 몸 의식 마음
+    pli: ''
+    en: ''
+  groups: {citta, kammavacara, kusala_vipaka}
+  
+- name:
+    kor: 평온과 함께하는 접수 마음
+    pli: ''
+    en: ''
+  groups: {citta, kammavacara, kusala_vipaka}
 
-# - name:
-#     kor: 즐거움과 함께하는 미소 짓는 마음
-#     pli: ''
-#     en: ''
-#   groups:
-#     bhumi: kama
-#     jati: kiriya
+- name:
+    kor: 즐거움과 함께하는 조사 마음
+    pli: ''
+    en: ''
+  groups: {citta, kammavacara, kusala_vipaka}
+
+- name:
+    kor: 평온과 함께하는 조사 마음
+    pli: ''
+    en: ''
+  groups: {citta, kammavacara, kusala_vipaka}
+
+- name:
+    kor: 평온과 함께하는 오문전향 마음
+    pli: ''
+    en: ''
+  groups: {citta, kammavacara, kiriya}
+
+- name:
+    kor: 평온과 함께하는 맘문전향 마음
+    pli: ''
+    en: ''
+  groups: {citta, kammavacara, kiriya}
+
+- name:
+    kor: 즐거움과 함께하는 미소 짓는 마음
+    pli: ''
+    en: ''
+  groups: {citta, kammavacara, kiriya}

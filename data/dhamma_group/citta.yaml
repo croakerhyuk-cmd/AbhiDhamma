@@ -1,11 +1,44 @@
 - id: citta
   name: { kor: 마음, pli: citta, en: Citta }
   item: citta.yaml
-  classification: citta.yaml
-
+  classification: 0_citta.yaml
 
 - id: kammavacara
-  name: { kor: 욕계, pli: kamma, en: Kamma }
+  name: { kor: 욕계 마음}
   item: citta.yaml
   classification: kammavacara.yaml
   
+- id: rupavacara
+  name: { kor: 색계 마음 }
+  item: citta.yaml
+  classification: rupavacara.yaml
+
+- id: arupavacara
+  name: { kor: 무색계 마음 }
+  item: citta.yaml
+  classification: arupavacara.yaml
+
+- id: lokuttara
+  name: { kor: 출세간 마음 }
+  item: citta.yaml
+  classification: lokuttara.yaml
+  
+- id: akusala
+  name: { kor: 불선한 마음 }
+  item: citta.yaml
+  classification: akusala.yaml
+
+- id: kusala
+  name: { kor: 선한 마음 }
+  item: citta.yaml
+  classification: kusala.yaml
+
+- id: vipaka
+  name: { kor: 과보의 마음 }
+  item: citta.yaml
+  classification: vipaka.yaml
+  
+- id: kiriya
+  name: { kor: 작용하는 마음 }
+  item: citta.yaml
+  classification: kiriya.yaml
