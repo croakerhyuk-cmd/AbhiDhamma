@@ -2,11 +2,11 @@ import { Utensils, Infinity, Mountain, Sparkles, type LucideIcon } from 'lucide-
 
 /** Visual language for the classifications shown on each citta card. */
 export const jatiVisuals = {
-  akusala: '#b5483f',
-  kusala: '#c49a22',
-  akusala_vipaka: '#477da8',
-  kusala_vipaka: '#21c534',
-  kiriya: '#242321',
+  akusala: '#dc2626',
+  kusala: '#ea580c',
+  akusala_vipaka: '#ca8a04',
+  kusala_vipaka: '#16a34a',
+  kiriya: '#2563eb',
 } as const;
 
 /** Icons suggest the four planes: sensory flow, form, formlessness, and transcendence. */
@@ -18,7 +18,8 @@ export const bhumiVisuals: Record<string, { icon: LucideIcon; className: string 
 };
 
 export function getJatiVisual(jati?: string) {
-  return jatiVisuals[jati as keyof typeof jatiVisuals] ?? '#d9d4c9';
+  const normalizedJati = jati?.replaceAll('-', '_');
+  return jatiVisuals[normalizedJati as keyof typeof jatiVisuals] ?? '#d9d4c9';
 }
 
 export function getBhumiVisual(bhumi?: string) {

@@ -1,0 +1,69 @@
+citta:
+  - id: bhumi
+    name: { kor: 탄생지, pli: bhūmi, en: birthplace }
+    description: { kor: 마음은 법체로 하나이지만 주로 일어나느 곳인 탄생지에 따라 4가지로 나눕니다. }
+    groups: { kammavacara, rupavacara, arupavacara, lokuttara }
+  - id: jati
+    name: { kor: 종류, pli: jati, en: type }
+    description: { kor: 불선한 마음 선한 마음 과보의 마음 작용하는 마음. }
+    groups: { akusala, kusala, akusala-vipaka, kusala-vipaka, kiriya }
+  - id: beauty
+    name: { kor: 아름다움, pli: sobhana}
+    description: { kor: 마음은 법체로 하나이지만 주로 일어나느 곳인 탄생지에 따라 4가지로 나눕니다. }
+    groups: { ugly, beautiful }
+  - id: feeling
+    name: { kor: 느낌, pli: vedana, en: feeling }
+    description: { kor: 마음은 법체로 하나이지만 주로 일어나느 곳인 탄생지에 따라 4가지로 나눕니다. }
+    groups: {somanassa, domanassa, upekkha, sukha, dukkha}
+
+    
+kammavacara:
+  - id: kammavacara
+    name: { kor: 욕계 마음, pli: kammavacara, en: kamma-vacara }
+    groups: { kamma-akusala, ahetuka, kamma-sobhana}
+
+kammaakusala:
+  - id: kamma-akusala
+    name: { kor: 해로운 마음}
+    description: { kor: 불선한 마음을 살펴봅니다. }
+    groups: { akusala }
+
+
+rupavacara:
+  - id: kamma-akusala
+    description: { kor: 마음은 법체로 하나이지만 주로 일어나느 곳인 탄생지에 따라 4가지로 나눕니다. }
+    groups: { beautiful, rupa, arupa, lokuttara }
+
+arupavacara:
+  - id: kamma-akusala
+    description: { kor: 마음은 법체로 하나이지만 주로 일어나느 곳인 탄생지에 따라 4가지로 나눕니다. }
+    groups: { beautiful, rupa, arupa, lokuttara }
+
+lokuttara:
+  - id: kamma-akusala
+    description: { kor: 마음은 법체로 하나이지만 주로 일어나느 곳인 탄생지에 따라 4가지로 나눕니다. }
+    groups: { beautiful, rupa, arupa, lokuttara }
+
+akusala:
+  - id: jati
+    name: { kor: 종류, pli: jati, en: type }
+    description: { kor: 불선한 마음을 살펴봅니다. }
+    groups: { akusala }
+
+kusala:
+  - id: jati
+    name: { kor: 종류, pli: jati, en: type }
+    description: { kor: 선한 마음을 살펴봅니다. }
+    groups: { kusala }
+
+vipaka:
+  - id: jati
+    name: { kor: 종류, pli: jati, en: type }
+    description: { kor: 과보의 마음을 살펴봅니다. }
+    groups: { akusala-vipaka, kusala-vipaka }
+
+kiriya:
+  - id: jati
+    name: { kor: 종류, pli: jati, en: type }
+    description: { kor: 작용하는 마음을 살펴봅니다. }
+    groups: { kiriya }

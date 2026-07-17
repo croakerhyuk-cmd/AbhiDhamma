@@ -4,7 +4,7 @@ import { load } from 'js-yaml';
 import { z } from 'zod';
 import type { Classification, ClassificationGroup, ExplorerDataset, ExplorerItem, LocaleText } from './types';
 
-const localeSchema = z.object({ kor: z.string(), pli: z.string(), en: z.string() });
+const localeSchema = z.object({ kor: z.string(), pli: z.string().optional(), en: z.string().optional() });
 const legacyLocaleSchema = z.object({ ko: z.string(), pi: z.string().optional(), en: z.string().optional() });
 const cittaSchema = z.object({
   // A citta only needs name and groups. id/number remain accepted for
@@ -26,12 +26,12 @@ const classificationSchema = z.object({
   id: z.string(),
   name: z.union([localeSchema, legacyLocaleSchema]).optional(),
   label: legacyLocaleSchema.optional(),
-  description: z.union([z.object({ kor: z.string() }), z.object({ ko: z.string() })]),
+  description: z.union([z.object({ kor: z.string() }), z.object({ ko: z.string() })]).optional(),
   groups: z.union([z.array(classificationGroupSchema), z.record(z.string(), z.unknown())]),
 });
 
 function locale(value: z.infer<typeof localeSchema> | z.infer<typeof legacyLocaleSchema>): LocaleText {
-  if ('kor' in value) return value;
+  if ('kor' in value) return { kor: value.kor, pli: value.pli ?? '', en: value.en ?? '' };
   return { kor: value.ko, pli: value.pi ?? '', en: value.en ?? '' };
 }
 
@@ -58,10 +58,11 @@ function normalizeClassification(raw: z.infer<typeof classificationSchema>): Cla
     ? raw.groups
     : Object.keys(raw.groups).map((id) => ({ id, name: { kor: id, pli: '', en: id } }));
   const rawName = raw.name ?? raw.label ?? { ko: raw.id, pi: raw.id, en: raw.id };
+  const description = raw.description;
   return {
     id: raw.id,
     name: locale(rawName),
-    description: { kor: 'kor' in raw.description ? raw.description.kor : raw.description.ko },
+    description: { kor: description ? ('kor' in description ? description.kor : description.ko) : '' },
     groups: rawGroups.map((group, index) => normalizeGroup(group as Parameters<typeof normalizeGroup>[0], raw.id, index)),
   };
 }
@@ -88,12 +89,34 @@ function readItems(file: string) {
   return z.array(cittaSchema).parse(readYaml<unknown>(`item/${file}`)).map(normalizeCitta);
 }
 
-function readClassifications(file: string) {
-  return z.array(classificationSchema).parse(readYaml<unknown>(`classification/${file}`)).map(normalizeClassification);
+function readClassifications(reference: string) {
+  const [file, section] = reference.split('#', 2);
+  const raw = readYaml<unknown>(`classification/${file}`);
+  const classifications = section
+    ? z.record(z.string(), z.array(classificationSchema)).parse(raw)[section]
+    : z.array(classificationSchema).parse(raw);
+
+  if (!classifications) {
+    return [];
+  }
+
+  return classifications.map(normalizeClassification);
+}
+
+function nameClassificationGroups(classifications: Classification[], names: Map<string, LocaleText>): Classification[] {
+  function nameGroups(groups: ClassificationGroup[]): ClassificationGroup[] {
+    return groups.map((group) => ({
+      ...group,
+      name: names.get(group.id) ?? group.name,
+      groups: group.groups ? nameGroups(group.groups) : undefined,
+    }));
+  }
+
+  return classifications.map((classification) => ({ ...classification, groups: nameGroups(classification.groups) }));
 }
 
 export function getCittas(): ExplorerItem[] { return readItems('citta.yaml'); }
-export function getClassifications(): Classification[] { return readClassifications('citta.yaml'); }
+export function getClassifications(): Classification[] { return readClassifications('citta.yaml#citta'); }
 
 const datasetSchema = z.object({
   id: z.string(),
@@ -122,11 +145,16 @@ export function getExplorerDatasets(): ExplorerDataset[] {
         itemFile: entry.item, classificationFile: entry.classification,
       } satisfies ExplorerDataset;
     });
+    const dhammaGroupNames = new Map(groups.map((group) => [group.id, group.name]));
+    const namedGroups = groups.map((group) => ({
+      ...group,
+      classifications: nameClassificationGroups(group.classifications, dhammaGroupNames),
+    }));
     return {
       id: category.id, name: locale(category.name ?? category.label!),
       description: { kor: 'kor' in category.description ? category.description.kor : category.description.ko },
-      itemName: locale(category.itemName ?? category.itemLabel!), items: groups[0]?.items ?? [],
-      classifications: groups[0]?.classifications ?? [], dhammaGroups: groups,
+      itemName: locale(category.itemName ?? category.itemLabel!), items: namedGroups[0]?.items ?? [],
+      classifications: namedGroups[0]?.classifications ?? [], dhammaGroups: namedGroups,
     } satisfies ExplorerDataset;
   });
 }

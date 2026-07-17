@@ -6,7 +6,7 @@
 
 `npm run dev`로 개발 서버를 실행하고 `http://localhost:3000`에서 확인합니다. `npm run build`로 배포 전 검증을 실행합니다.
 
-데이터는 다음 계층으로 편집합니다. `data/datasets.yaml`의 대분류를 선택하면 같은 이름의 `data/dhamma_group/<id>.yaml`을 읽습니다. 각 담마그룹 항목이 지정한 `item`과 `classification` 파일은 각각 `data/item/`과 `data/classification/`에서 읽히며, 아이템의 `groups`에 적은 그룹 id와 분류 파일의 그룹 id가 카드를 연결합니다. 분류 그룹에 하위 `groups`를 추가하면 화면에서 해당 그룹을 눌러 다음 단계로 이동합니다.
+데이터는 다음 계층으로 편집합니다. `data/datasets.yaml`의 대분류를 선택하면 같은 이름의 `data/dhamma_group/<id>.yaml`을 읽습니다. 각 담마그룹 항목이 지정한 `item`과 `classification`은 각각 `data/item/`과 `data/classification/`에서 읽히며, 아이템의 `groups`에 적은 그룹 id와 분류 파일의 그룹 id가 카드를 연결합니다. 분류는 한 YAML에 모아 작성하고 `classification: citta.yaml#akusala`처럼 파일명 뒤 `#`에 해당 섹션명을 지정합니다. 지정한 분류 섹션이 없으면 해당 담마그룹은 하위 그룹이 없는 것처럼 분류 없이 표시됩니다. 분류 그룹에 하위 `groups`를 추가하면 화면에서 해당 그룹을 눌러 다음 단계로 이동합니다.
 
 GitHub repository를 Vercel에 연결하면 main push는 Production 배포, Pull Request는 Preview 배포가 됩니다. 별도 환경변수는 필요하지 않습니다.
 

@@ -1,4 +1,0 @@
-- id: jati
-  name: { kor: 종류, pli: jati, en: type }
-  description: { kor: 불선한 마음을 살펴봅니다. }
-  groups: {akusala}

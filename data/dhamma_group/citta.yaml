@@ -1,44 +1,115 @@
 - id: citta
   name: { kor: 마음, pli: citta, en: Citta }
   item: citta.yaml
-  classification: 0_citta.yaml
+  classification: citta.yaml#citta
+
+- id: ugly
+  name: { kor: 아름답지 않은 마음}
+  item: citta.yaml
+  classification: citta.yaml#ugly
+
+- id: beautiful
+  name: { kor: 아름다운 마음}
+  item: citta.yaml
+  classification: citta.yaml#beauty
 
 - id: kammavacara
   name: { kor: 욕계 마음}
   item: citta.yaml
-  classification: kammavacara.yaml
+  classification: citta.yaml#kammavacara
   
 - id: rupavacara
   name: { kor: 색계 마음 }
   item: citta.yaml
-  classification: rupavacara.yaml
+  classification: citta.yaml#rupavacara
 
 - id: arupavacara
   name: { kor: 무색계 마음 }
   item: citta.yaml
-  classification: arupavacara.yaml
+  classification: citta.yaml#arupavacara
 
 - id: lokuttara
   name: { kor: 출세간 마음 }
   item: citta.yaml
-  classification: lokuttara.yaml
+  classification: citta.yaml#lokuttara
   
 - id: akusala
-  name: { kor: 불선한 마음 }
+  name: { kor: 불선 마음 }
   item: citta.yaml
-  classification: akusala.yaml
+  classification: citta.yaml#akusala
 
 - id: kusala
-  name: { kor: 선한 마음 }
+  name: { kor: 선 마음 }
   item: citta.yaml
-  classification: kusala.yaml
+  classification: citta.yaml#kusala
 
-- id: vipaka
-  name: { kor: 과보의 마음 }
+- id: akusala-vipaka
+  name: { kor: 불선과보의 마음 }
   item: citta.yaml
-  classification: vipaka.yaml
-  
+  classification: citta.yaml#vipaka
+
+- id: kusala-vipaka
+  name: { kor: 선과보의 마음 }
+  item: citta.yaml
+  classification: citta.yaml#vipaka
+
 - id: kiriya
   name: { kor: 작용하는 마음 }
   item: citta.yaml
-  classification: kiriya.yaml
+  classification: citta.yaml#kiriya
+
+- id: sukha
+  name: { kor: 행복(육체적) }
+  item: citta.yaml
+  classification: citta.yaml#feeling
+
+- id: dukkha
+  name: { kor: 고통(육체적) }
+  item: citta.yaml
+  classification: citta.yaml#feeling
+
+- id: somanassa
+  name: { kor: 즐거움(정신적) }
+  item: citta.yaml
+  classification: citta.yaml#feeling
+
+- id: domanassa
+  name: { kor: 근심(정신적) }
+  item: citta.yaml
+  classification: citta.yaml#feeling
+
+- id: upekkha
+  name: { kor: 평온 }
+  item: citta.yaml
+  classification: citta.yaml#feeling
+
+- id: kamma-akusala
+  name: { kor: 해로운 마음 }
+  item: citta.yaml
+  classification: citta.yaml#kamma-akusala
+
+- id: ahetuka
+  name: { kor: 원인없는 마음 }
+  item: citta.yaml
+  classification: citta.yaml#ahetuka
+
+- id: kamma-sobhana
+  name: { kor: 욕계 아름다운 마음 }
+  item: citta.yaml
+  classification: citta.yaml#kamma-sobhana
+
+- id: lobha-mula
+  name: { kor: 탐욕뿌리 마음 }
+  item: citta.yaml
+  classification: citta.yaml#lobha-mula
+
+- id: dosa-mula
+  name: { kor: 성냄뿌리 마음 }
+  item: citta.yaml
+  classification: citta.yaml#dosa-mula
+  
+- id: moha-mula
+  name: { kor: 어리석음뿌리 마음 }
+  item: citta.yaml
+  classification: citta.yaml#moha-mula
+
