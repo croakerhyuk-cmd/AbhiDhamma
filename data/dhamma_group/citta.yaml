@@ -1,0 +1,11 @@
+- id: citta
+  name: { kor: 마음, pli: citta, en: Citta }
+  item: citta.yaml
+  classification: citta.yaml
+
+
+- id: kammavacara
+  name: { kor: 욕계, pli: kamma, en: Kamma }
+  item: citta.yaml
+  classification: kammavacara.yaml
+  

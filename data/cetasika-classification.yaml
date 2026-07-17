@@ -1,4 +1,0 @@
-- id: category
-  name: { kor: 마음부수의 분류, pli: cetasika-vibhāga, en: Category }
-  description: { kor: 마음부수의 데이터가 추가되면 이 기준으로 그룹화합니다. }
-  groups: []

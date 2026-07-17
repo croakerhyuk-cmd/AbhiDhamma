@@ -6,7 +6,7 @@
 
 `npm run dev`로 개발 서버를 실행하고 `http://localhost:3000`에서 확인합니다. `npm run build`로 배포 전 검증을 실행합니다.
 
-마음 데이터는 `data/cittas.yaml`, 분류 기준은 `data/classifications.yaml`, 출처 메모는 `data/sources.yaml`에서 편집합니다. 분류 파일에 그룹을 추가하고 마음의 `attributes`에 같은 키를 넣으면 UI가 자동으로 그룹화합니다. 54개에 고정된 코드는 없으므로 89/121개로 확장할 수 있습니다.
+데이터는 다음 계층으로 편집합니다. `data/datasets.yaml`의 대분류를 선택하면 같은 이름의 `data/dhamma_group/<id>.yaml`을 읽습니다. 각 담마그룹 항목이 지정한 `item`과 `classification` 파일은 각각 `data/item/`과 `data/classification/`에서 읽히며, 아이템의 `groups`에 적은 그룹 id와 분류 파일의 그룹 id가 카드를 연결합니다. 분류 그룹에 하위 `groups`를 추가하면 화면에서 해당 그룹을 눌러 다음 단계로 이동합니다.
 
 GitHub repository를 Vercel에 연결하면 main push는 Production 배포, Pull Request는 Preview 배포가 됩니다. 별도 환경변수는 필요하지 않습니다.
 

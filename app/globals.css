@@ -69,6 +69,8 @@ h1 { font-family:'Noto Serif KR', serif; font-size:clamp(46px, 7vw, 88px); line-
 .groups-list { display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); gap:14px; align-items:start; width:100%; }
 .group-section { margin-bottom:0; }
 .group-heading { display:flex; gap:8px; align-items:center; margin-bottom:10px; }
+.group-heading { width:100%; border:0; padding:0; background:transparent; color:inherit; text-align:left; }
+.group-heading:hover .group-label, .group-heading.active .group-label { color:var(--saffron); }
 .group-title { display:flex; align-items:center; gap:8px; min-width:0; }
 .group-icon { width:30px; height:30px; display:grid; place-items:center; flex:0 0 auto; }
 .group-label { display:flex; gap:6px; align-items:center; font-size:12px; font-weight:700; }
@@ -82,8 +84,13 @@ h1 { font-family:'Noto Serif KR', serif; font-size:clamp(46px, 7vw, 88px); line-
 .card-top { display:flex; justify-content:space-between; align-items:start; }
 .number { color:#aaa49a; font-size:9px; }
 .card-icon { color:var(--saffron); }
-.card-name { font-family:'Noto Serif KR',serif; font-size:10px; line-height:1.35; margin-top:7px; letter-spacing:-.05em; }
-.card-pali { font:8px 'DM Mono',monospace; color:#9e988d; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; margin-top:4px; }
+.card-icon svg { width:15px; height:15px; }
+.bhumi-kama { color:#477da8; }
+.bhumi-rupa { color:#8b6b4a; }
+.bhumi-arupa { color:#7868a5; }
+.bhumi-lokuttara { color:#c88943; }
+.card-name { font-family:'Noto Serif KR',serif; font-size:12px; line-height:1.35; margin-top:7px; letter-spacing:-.05em; }
+.card-pali { font:9px 'DM Mono',monospace; color:#9e988d; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; margin-top:4px; }
 .card-arrow { color:#b1aa9e; position:absolute; right:8px; bottom:8px; opacity:0; transition:opacity .2s; }
 .citta-card:hover .card-arrow, .citta-card.selected .card-arrow { opacity:1; }
 .scattering-card { min-height:88px; }

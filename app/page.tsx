@@ -1,6 +1,6 @@
-import { CittaExplorer } from '@/components/citta-explorer';
+import { Screen } from '@/components/screen';
 import { getExplorerDatasets } from '@/lib/data';
 
 export default function Home() {
-  return <CittaExplorer datasets={getExplorerDatasets()} />;
+  return <Screen datasets={getExplorerDatasets()} />;
 }
