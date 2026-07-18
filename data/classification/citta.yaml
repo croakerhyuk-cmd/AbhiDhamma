@@ -12,7 +12,7 @@ citta:
     description: { kor: 마음은 법체로 하나이지만 주로 일어나느 곳인 탄생지에 따라 4가지로 나눕니다. }
     groups: {somanassa, domanassa, upekkha, sukha, dukkha}
   - id: hetuka
-    name: { kor: 뿌리, pli: hetu, en: cause }
+    name: { kor: 원인, pli: hetu, en: cause }
     description: { kor: 마음은 법체로 하나이지만 주로 일어나느 곳인 탄생지에 따라 4가지로 나눕니다. }
     groups: { ahetuka, ekahetuka, dvihetuka, tihetuka}
   # - id: beauty

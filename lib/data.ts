@@ -12,6 +12,7 @@ const cittaSchema = z.object({
   id: z.union([z.string(), z.number()]).transform(String).optional(), number: z.number().optional(),
   name: z.union([localeSchema, legacyLocaleSchema]),
   groups: z.union([z.record(z.string(), z.unknown()), z.array(z.string())]).optional(),
+  hetuka: z.union([z.array(z.string()), z.record(z.string(), z.unknown())]).optional(),
   attributes: z.record(z.string(), z.string()).optional(),
   short: z.unknown().optional(), icon: z.string().optional(),
 });
@@ -45,7 +46,8 @@ function normalizeCitta(raw: z.infer<typeof cittaSchema>, index: number): Explor
     delete groups.plane;
   }
   const groupIds = Object.entries(groups).flatMap(([key, value]) => [key, value]).filter((value, i, all) => value && all.indexOf(value) === i);
-  return { key: raw.id ?? `citta-${index}`, name: locale(raw.name), groups, groupIds };
+  const hetuka = Array.isArray(raw.hetuka) ? raw.hetuka : Object.keys(raw.hetuka ?? {});
+  return { key: raw.id ?? `citta-${index}`, name: locale(raw.name), groups, groupIds, hetuka };
 }
 
 function normalizeGroup(raw: { id?: string; name?: LocaleText; label?: { ko: string }; groups?: unknown[] }, classificationId: string, index: number): ClassificationGroup {

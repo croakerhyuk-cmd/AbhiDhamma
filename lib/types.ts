@@ -6,6 +6,8 @@ export type ExplorerItem = {
   name: LocaleText;
   groups: Record<string, string>;
   groupIds: string[];
+  /** 이 마음과 함께 일어나는 여섯 가지 원인(hetuka)입니다. */
+  hetuka: string[];
 };
 
 export type Citta = ExplorerItem;

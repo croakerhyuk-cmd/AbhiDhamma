@@ -86,22 +86,22 @@
 
 ####
 - id: ahetuka
-  name: { kor: 뿌리없는 마음 }
+  name: { kor: 원인없는 마음 }
   item: citta.yaml
   classification: citta.yaml#ahetuka
 
 - id: ekahetuka
-  name: { kor: 한가지 뿌리 마음 }
+  name: { kor: 한가지 원인 마음 }
   item: citta.yaml
   classification: citta.yaml#ahetuka
 
 - id: dvihetuka
-  name: { kor: 두가지 뿌리 마음 }
+  name: { kor: 두가지 원인 마음 }
   item: citta.yaml
   classification: citta.yaml#ahetuka
 
 - id: tihetuka
-  name: { kor: 세가지 뿌리 마음 }
+  name: { kor: 세가지 원인 마음 }
   item: citta.yaml
   classification: citta.yaml#ahetuka
 
@@ -110,7 +110,6 @@
   name: { kor: 해로운 마음 }
   item: citta.yaml
   classification: citta.yaml#kamma-akusala
-
 
 
 - id: kamma-sobhana

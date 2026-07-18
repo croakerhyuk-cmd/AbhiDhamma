@@ -1,14 +1,22 @@
 "use client";
 
 import { AnimatePresence, LayoutGroup, motion, useReducedMotion } from 'framer-motion';
-import { ArrowLeft, ArrowUpRight, Brain, Search, X } from 'lucide-react';
+import { ArrowLeft, ArrowUpRight, Brain, CircleDot, Flame, Frown, Heart, Leaf, Search, Sparkles, X } from 'lucide-react';
 import { useEffect, useMemo, useState } from 'react';
 import type { ExplorerDataset, ExplorerItem, ClassificationGroup, ExplorerGroup } from '@/lib/types';
 import { groupItems } from '@/lib/grouping';
-import { getBhumiVisual, getGroupVisual, getJatiVisual } from '@/lib/visual-config';
+import { getGroupVisual } from '@/lib/visual-config';
 
 const SINGLE_COLUMN_CARD_LIMIT = 10;
 const THREE_COLUMN_CARD_THRESHOLD = 40;
+const HETUKA_CARDS = [
+  { id: '탐욕', icon: Flame, className: 'hetuka-lobha' },
+  { id: '성냄', icon: Frown, className: 'hetuka-dosa' },
+  { id: '어리석음', icon: CircleDot, className: 'hetuka-moha' },
+  { id: '탐욕없음', icon: Leaf, className: 'hetuka-alobha' },
+  { id: '성냄없음', icon: Heart, className: 'hetuka-adosa' },
+  { id: '어리석음없음', icon: Sparkles, className: 'hetuka-amoha' },
+] as const;
 
 function groupColumnClass(itemCount: number): string {
   if (itemCount <= SINGLE_COLUMN_CARD_LIMIT) return 'single-column';
@@ -114,11 +122,6 @@ export function Screen({ dhammaGroup, onOpenGroup, onReturnToParent }: { dhammaG
     return findMatchingGroup(classification.groups);
   }
 
-  function jatiFor(item: ExplorerItem): string | undefined {
-    const jati = classifications.find((classification) => classification.id === 'jati');
-    return jati ? groupForItem(item, jati)?.id : item.groups.jati;
-  }
-
   function changeHorizontalClassification(nextId: string) {
     setClassificationId(nextId);
     setVerticalClassificationId((currentId) => currentId === nextId ? '' : currentId);
@@ -168,7 +171,7 @@ export function Screen({ dhammaGroup, onOpenGroup, onReturnToParent }: { dhammaG
         </LayoutGroup>
       </main>
 
-      <AnimatePresence>{selected && <motion.div className="detail-backdrop" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.15 }} onClick={() => setSelected(null)}><motion.aside className="detail-panel" initial={{ x: '100%' }} animate={{ x: 0 }} exit={{ x: '100%' }} transition={{ type: 'spring', damping: 32, stiffness: 480, mass: 0.65 }} onClick={(event) => event.stopPropagation()}><button className="close-button" onClick={() => setSelected(null)} aria-label="상세 패널 닫기"><X size={19} /></button><div className="detail-number">{dhammaGroup?.itemName.en.toUpperCase()} / {selected.key.replace('citta-', '').padStart(2, '0')}</div><div className="detail-icon" style={{ color: getJatiVisual(jatiFor(selected)) }}>{(() => { const bhumi = classifications.find((item) => item.id === 'bhumi'); const Icon = getBhumiVisual(bhumi && groupForItem(selected, bhumi)?.id).icon; return <Icon size={34} />; })()}</div><h2>{selected.name.kor}</h2><p className="detail-pali">{selected.name.pli}</p><div className="detail-divider" /><h3>분류</h3><div className="attribute-icon-grid">{classifications.map((item) => { const group = groupForItem(selected, item); if (!group) return null; const { icon: GroupIcon, className } = getGroupVisual(item.id, group.id); return <div key={item.id} className="attribute-icon-item" title={`${item.name.kor}: ${group.name.kor}`}><span className={`attribute-group-icon ${className}`}><GroupIcon aria-hidden="true" /></span><strong>{group.name.kor}</strong><span>{item.name.kor}</span></div>; })}</div><div className="detail-note"><Brain size={17} /> 분류 렌즈를 바꾸면 이 항목의 위치도 함께 달라집니다.</div></motion.aside></motion.div>}</AnimatePresence>
+      <AnimatePresence>{selected && <motion.div className="detail-backdrop" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.15 }} onClick={() => setSelected(null)}><motion.aside className="detail-panel" initial={{ x: '100%' }} animate={{ x: 0 }} exit={{ x: '100%' }} transition={{ type: 'spring', damping: 32, stiffness: 480, mass: 0.65 }} onClick={(event) => event.stopPropagation()}><button className="close-button" onClick={() => setSelected(null)} aria-label="상세 패널 닫기"><X size={19} /></button><div className="detail-number">{dhammaGroup?.itemName.en.toUpperCase()} / {selected.key.replace('citta-', '').padStart(2, '0')}</div><h2>{selected.name.kor}</h2><p className="detail-pali">{selected.name.pli}</p><div className="detail-divider" /><h3>원인 (hetuka)</h3><div className="hetuka-icon-grid">{HETUKA_CARDS.map(({ id, icon: HetukaIcon, className }) => { const active = selected.hetuka.includes(id); return <div key={id} className={`hetuka-icon-item ${active ? `is-active ${className}` : 'is-inactive'}`} title={active ? `${id} 있음` : `${id} 없음`}><HetukaIcon aria-hidden="true" /><span>{id}</span></div>; })}</div><h3 className="classification-heading">분류</h3><div className="attribute-icon-grid">{classifications.map((item) => { const group = groupForItem(selected, item); if (!group) return null; const { icon: GroupIcon, className } = getGroupVisual(item.id, group.id); return <div key={item.id} className="attribute-icon-item" title={`${item.name.kor}: ${group.name.kor}`}><span className={`attribute-group-icon ${className}`}><GroupIcon aria-hidden="true" /></span><strong>{group.name.kor}</strong><span>{item.name.kor}</span></div>; })}</div><div className="detail-note"><Brain size={17} /> 분류 렌즈를 바꾸면 이 항목의 위치도 함께 달라집니다.</div></motion.aside></motion.div>}</AnimatePresence>
     </>
   );
 }
