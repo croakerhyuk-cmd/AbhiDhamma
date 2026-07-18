@@ -58,6 +58,7 @@
   item: citta.yaml
   classification: citta.yaml#kiriya
 
+###
 - id: sukha
   name: { kor: 행복(육체적) }
   item: citta.yaml
@@ -83,15 +84,34 @@
   item: citta.yaml
   classification: citta.yaml#feeling
 
+####
+- id: ahetuka
+  name: { kor: 원인 없는 마음 }
+  item: citta.yaml
+  classification: citta.yaml#ahetuka
+
+- id: ekahetuka
+  name: { kor: 한가지 원인 마음 }
+  item: citta.yaml
+  classification: citta.yaml#ahetuka
+
+- id: dvihetuka
+  name: { kor: 두가지 원인 마음 }
+  item: citta.yaml
+  classification: citta.yaml#ahetuka
+
+- id: tihetuka
+  name: { kor: 세가지 원인 마음 }
+  item: citta.yaml
+  classification: citta.yaml#ahetuka
+
+###
 - id: kamma-akusala
   name: { kor: 해로운 마음 }
   item: citta.yaml
   classification: citta.yaml#kamma-akusala
 
-- id: ahetuka
-  name: { kor: 원인없는 마음 }
-  item: citta.yaml
-  classification: citta.yaml#ahetuka
+
 
 - id: kamma-sobhana
   name: { kor: 욕계 아름다운 마음 }

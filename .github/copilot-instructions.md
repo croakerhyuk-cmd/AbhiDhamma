@@ -24,3 +24,5 @@
 
 - [x] Ensure Documentation is Complete
 	<!-- Keep README and this file current. -->
+
+- npm run lint 는 작동하니 않으니 쓰지 말것. npm run build, npm run dev 만 사용하라.

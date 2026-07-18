@@ -1,82 +1,85 @@
+### 욕계 불선 마음
+## 탐욕에 뿌리한 불선 마음
 - name:
     kor: 즐거움과 함께하고 사견과 결합한 형성 없는 마음
     pli: ''
     en: ''
-  groups: {citta, kammavacara, akusala, kamma-akusala, ugly, somanassa, lobha-mula}
+  groups: {citta, kammavacara, akusala, kamma-akusala, ugly, somanassa, dvihetuka, lobha-mula}
 
 - name:
     kor: 즐거움과 함께하고 사견과 결합한 형성 있는 마음
     pli: ''
     en: ''
-  groups: {citta, kammavacara, akusala, kamma-akusala, ugly, somanassa, lobha-mula}
+  groups: {citta, kammavacara, akusala, kamma-akusala, ugly, somanassa, dvihetuka, lobha-mula}
   
 - name:
     kor: 즐거움과 함께하고 사견과 결합하지 않은 형성 없는 마음
     pli: ''
     en: ''
-  groups: {citta, kammavacara, akusala, kamma-akusala, ugly, somanassa, lobha-mula}
+  groups: {citta, kammavacara, akusala, kamma-akusala, ugly, somanassa, dvihetuka, lobha-mula}
 
 - name:
     kor: 즐거움과 함께하고 사견과 결합하지 않은 형성 있는 마음
     pli: ''
     en: ''
-  groups: {citta, kammavacara, akusala, kamma-akusala, ugly, somanassa, lobha-mula}
+  groups: {citta, kammavacara, akusala, kamma-akusala, ugly, somanassa, dvihetuka, lobha-mula}
     
 - name:
     kor: 평온과 함께하고 사견과 결합한 형성 없는 마음
     pli: ''
     en: ''
-  groups: {citta, kammavacara, akusala, kamma-akusala, ugly, upekkha, lobha-mula}
+  groups: {citta, kammavacara, akusala, kamma-akusala, ugly, upekkha, dvihetuka, lobha-mula}
 
 
 - name:
     kor: 평온과 함께하고 사견과 결합한 형성 있는 마음
     pli: ''
     en: ''
-  groups: {citta, kammavacara, akusala, kamma-akusala, ugly, upekkha, lobha-mula}
+  groups: {citta, kammavacara, akusala, kamma-akusala, ugly, upekkha, dvihetuka, lobha-mula}
     
 
 - name:
     kor: 평온과 함께하고 사견과 결합하지 않은 형성 없는 마음
     pli: ''
     en: ''
-  groups: {citta, kammavacara, akusala, kamma-akusala, ugly, upekkha, lobha-mula}
+  groups: {citta, kammavacara, akusala, kamma-akusala, ugly, upekkha, dvihetuka, lobha-mula}
     
 
 - name:
     kor: 평온과 함께하고 사견과 결합하지 않은 형성 있는 마음
     pli: ''
     en: ''
-  groups: {citta, kammavacara, akusala, kamma-akusala, ugly, upekkha, lobha-mula}
+  groups: {citta, kammavacara, akusala, kamma-akusala, ugly, upekkha, dvihetuka, lobha-mula}
     
 
 - name:
     kor: 근심과 함께하고 적의와 결합한 형성 없는 마음
     pli: ''
     en: ''
-  groups: {citta, kammavacara, akusala, kamma-akusala, ugly, domanassa, dosa-mula}
+  groups: {citta, kammavacara, akusala, kamma-akusala, ugly, domanassa, dvihetuka, dosa-mula}
 
 
 - name:
     kor: 근심과 함께하고 적의와 결합한 형성 있는 마음
     pli: ''
     en: ''
-  groups: {citta, kammavacara, akusala, kamma-akusala, ugly, domanassa, dosa-mula}
+  groups: {citta, kammavacara, akusala, kamma-akusala, ugly, domanassa, dvihetuka, dosa-mula}
 
-##
+## 어리석음 원인 마음
 - name:
     kor: 평온과 함께하고 의심과 결합한 마음
     pli: ''
     en: ''
-  groups: {citta, kammavacara, akusala, kamma-akusala, ugly, upekkha, moha-mula}
+  groups: {citta, kammavacara, akusala, kamma-akusala, ugly, upekkha, ekahetuka, moha-mula}
 
 - name:
     kor: 평온과 함께하고 들뜸과 결합한 마음
     pli: ''
     en: ''
-  groups: {citta, kammavacara, akusala, kamma-akusala, ugly, upekkha, moha-mula}
+  groups: {citta, kammavacara, akusala, kamma-akusala, ugly, upekkha, ekahetuka, moha-mula}
 
-###
+### 원인없는 마음들
+## 원인없는 불선과보 마음
 - name:
     kor: 평온과 함께하는 눈 의식 마음
     pli: ''
@@ -119,7 +122,7 @@
     en: ''
   groups: {citta, kammavacara, akusala-vipaka, ugly, upekkha, ahetuka}
 
-##
+## 원인없는 선과보 마음
 - name:
     kor: 평온과 함께하는 눈 의식 마음
     pli: ''
@@ -168,6 +171,7 @@
     en: ''
   groups: {citta, kammavacara, kusala-vipaka, ugly, upekkha, ahetuka}
 
+## 원인없는 작용만 하는 마음
 - name:
     kor: 평온과 함께하는 오문전향 마음
     pli: ''
@@ -186,149 +190,149 @@
     en: ''
   groups: {citta, kammavacara, kiriya, ugly, somanassa, ahetuka}
 
-###
+### 
 - name:
     kor: 즐거움과 함께하고 지혜와 결합한 형성 없는 마음
     pli: ''
     en: ''
-  groups: {citta, kammavacara, beautiful, kusala, somanassa}
+  groups: {citta, kammavacara, beautiful, kusala, somanassa, tihetuka}
 
 - name:
     kor: 즐거움과 함께하고 지혜와 결합한 형성 있는 마음
     pli: ''
     en: ''
-  groups: {citta, kammavacara, beautiful, kusala, somanassa}
+  groups: {citta, kammavacara, beautiful, kusala, somanassa, tihetuka}
 
 - name:
     kor: 즐거움과 함께하고 지혜와 결합하지 않은 형성 없는 마음
     pli: ''
     en: ''
-  groups: {citta, kammavacara, beautiful, kusala, somanassa}
+  groups: {citta, kammavacara, beautiful, kusala, somanassa, dvihetuka}
 
 - name:
     kor: 즐거움과 함께하고 지혜와 결합하지 않은 형성 있는 마음
     pli: ''
     en: ''
-  groups: {citta, kammavacara, beautiful, kusala, somanassa}
+  groups: {citta, kammavacara, beautiful, kusala, somanassa, dvihetuka}
 
 - name:
     kor: 평온과 함께하고 지혜와 결합한 형성 없는 마음
     pli: ''
     en: ''
-  groups: {citta, kammavacara, beautiful, kusala, upekkha}
+  groups: {citta, kammavacara, beautiful, kusala, upekkha, tihetuka}
 
 - name:
     kor: 평온과 함께하고 지혜와 결합한 형성 있는 마음
     pli: ''
     en: ''
-  groups: {citta, kammavacara, beautiful, kusala, upekkha}
+  groups: {citta, kammavacara, beautiful, kusala, upekkha, tihetuka}
 
 - name:
     kor: 평온과 함께하고 지혜와 결합하지 않은 형성 없는 마음
     pli: ''
     en: ''
-  groups: {citta, kammavacara, beautiful, kusala, upekkha}
+  groups: {citta, kammavacara, beautiful, kusala, upekkha, dvihetuka}
 
 - name:
     kor: 평온과 함께하고 지혜와 결합하지 않은 형성 있는 마음
     pli: ''
     en: ''
-  groups: {citta, kammavacara, beautiful, kusala, upekkha}
+  groups: {citta, kammavacara, beautiful, kusala, upekkha, dvihetuka}
 
 ##
 - name:
     kor: 즐거움과 함께하고 지혜와 결합한 형성 없는 마음
     pli: ''
     en: ''
-  groups: {citta, kammavacara, beautiful, kusala-vipaka, somanassa}
+  groups: {citta, kammavacara, beautiful, kusala-vipaka, somanassa, tihetuka}
 
 - name:
     kor: 즐거움과 함께하고 지혜와 결합한 형성 있는 마음
     pli: ''
     en: ''
-  groups: {citta, kammavacara, beautiful, kusala-vipaka, somanassa}
+  groups: {citta, kammavacara, beautiful, kusala-vipaka, somanassa, tihetuka}
 
 - name:
     kor: 즐거움과 함께하고 지혜와 결합하지 않은 형성 없는 마음
     pli: ''
     en: ''
-  groups: {citta, kammavacara, beautiful, kusala-vipaka, somanassa}
+  groups: {citta, kammavacara, beautiful, kusala-vipaka, somanassa, dvihetuka}
 
 - name:
     kor: 즐거움과 함께하고 지혜와 결합하지 않은 형성 있는 마음
     pli: ''
     en: ''
-  groups: {citta, kammavacara, beautiful, kusala-vipaka, somanassa}
+  groups: {citta, kammavacara, beautiful, kusala-vipaka, somanassa, dvihetuka}
 
 - name:
     kor: 평온과 함께하고 지혜와 결합한 형성 없는 마음
     pli: ''
     en: ''
-  groups: {citta, kammavacara, beautiful, kusala-vipaka, upekkha}
+  groups: {citta, kammavacara, beautiful, kusala-vipaka, upekkha, tihetuka}
 
 - name:
     kor: 평온과 함께하고 지혜와 결합한 형성 있는 마음
     pli: ''
     en: ''
-  groups: {citta, kammavacara, beautiful, kusala-vipaka, upekkha}
+  groups: {citta, kammavacara, beautiful, kusala-vipaka, upekkha, tihetuka}
 
 - name:
     kor: 평온과 함께하고 지혜와 결합하지 않은 형성 없는 마음
     pli: ''
     en: ''
-  groups: {citta, kammavacara, beautiful, kusala-vipaka, upekkha}
+  groups: {citta, kammavacara, beautiful, kusala-vipaka, upekkha, dvihetuka}
 
 - name:
     kor: 평온과 함께하고 지혜와 결합하지 않은 형성 있는 마음
     pli: ''
     en: ''
-  groups: {citta, kammavacara, beautiful, kusala-vipaka, upekkha}
+  groups: {citta, kammavacara, beautiful, kusala-vipaka, upekkha, dvihetuka}
 
 ##
 - name:
     kor: 즐거움과 함께하고 지혜와 결합한 형성 없는 마음
     pli: ''
     en: ''
-  groups: {citta, kammavacara, beautiful, kiriya, somanassa}
+  groups: {citta, kammavacara, beautiful, kiriya, somanassa, tihetuka}
 
 - name:
     kor: 즐거움과 함께하고 지혜와 결합한 형성 있는 마음
     pli: ''
     en: ''
-  groups: {citta, kammavacara, beautiful, kiriya, somanassa}
+  groups: {citta, kammavacara, beautiful, kiriya, somanassa, tihetuka}
 
 - name:
     kor: 즐거움과 함께하고 지혜와 결합하지 않은 형성 없는 마음
     pli: ''
     en: ''
-  groups: {citta, kammavacara, beautiful, kiriya, somanassa}
+  groups: {citta, kammavacara, beautiful, kiriya, somanassa, dvihetuka}
 
 - name:
     kor: 즐거움과 함께하고 지혜와 결합하지 않은 형성 있는 마음
     pli: ''
     en: ''
-  groups: {citta, kammavacara, beautiful, kiriya, somanassa}
+  groups: {citta, kammavacara, beautiful, kiriya, somanassa, dvihetuka}
 
 - name:
     kor: 평온과 함께하고 지혜와 결합한 형성 없는 마음
     pli: ''
     en: ''
-  groups: {citta, kammavacara, beautiful, kiriya, upekkha}
+  groups: {citta, kammavacara, beautiful, kiriya, upekkha, tihetuka}
 
 - name:
     kor: 평온과 함께하고 지혜와 결합한 형성 있는 마음
     pli: ''
     en: ''
-  groups: {citta, kammavacara, beautiful, kiriya, upekkha}
+  groups: {citta, kammavacara, beautiful, kiriya, upekkha, tihetuka}
 
 - name:
     kor: 평온과 함께하고 지혜와 결합하지 않은 형성 없는 마음
     pli: ''
     en: ''
-  groups: {citta, kammavacara, beautiful, kiriya, upekkha}
+  groups: {citta, kammavacara, beautiful, kiriya, upekkha, dvihetuka}
 
 - name:
     kor: 평온과 함께하고 지혜와 결합하지 않은 형성 있는 마음
     pli: ''
     en: ''
-  groups: {citta, kammavacara, beautiful, kiriya, upekkha}
+  groups: {citta, kammavacara, beautiful, kiriya, upekkha, dvihetuka}
