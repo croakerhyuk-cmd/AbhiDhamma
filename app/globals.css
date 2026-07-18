@@ -113,7 +113,7 @@ h1 { font-family:'Noto Serif KR', serif; font-size:clamp(46px, 7vw, 88px); line-
 .citta-grid.single-column { grid-template-columns:minmax(0, 1fr); width:calc(100% + 4px); }
 .citta-grid.three-column { grid-template-columns:repeat(3, calc((100% - 22px) / 3)); }
 .regrouping-grid { grid-template-columns:repeat(8,1fr); min-height:260px; align-content:start; }
-.citta-card { position:relative; height:78px; text-align:left; padding:7px; border:1px solid #fff; background:#f5f4f0; color:var(--ink); display:flex; flex-direction:column; transition:box-shadow .25s; }
+.citta-card { position:relative; height:82px; text-align:left; padding:7px; border:1px solid #fff; background:#f5f4f0; color:var(--ink); display:flex; flex-direction:column; transition:box-shadow .25s; }
 .citta-card:hover, .citta-card.selected { border-color:#fff; box-shadow:0 7px 22px #3028190e; }
 .card-top { display:flex; justify-content:space-between; align-items:start; }
 .number { color:#aaa49a; font-size:9px; }
