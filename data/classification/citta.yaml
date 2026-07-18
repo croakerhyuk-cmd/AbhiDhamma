@@ -1,28 +1,25 @@
-citta:
-  
-  - id: jati
-    name: { kor: 종류, pli: jati, en: type }
+citta: 
+  - id: kamma
+    name: { kor: 업 , pli: jati, en: type }
     description: { kor: 불선한 마음 선한 마음 과보의 마음 작용하는 마음. }
     groups: { akusala, kusala, akusala-vipaka, kusala-vipaka, kiriya } 
+  - id: bhumi
+    name: { kor: 탄생지, pli: bhūmi, en: birthplace }
+    description: { kor: 마음은 법체로 하나이지만 주로 일어나느 곳인 탄생지에 따라 4가지로 나눕니다. }
+    groups: { kammavacara, rupavacara, arupavacara, lokuttara }
   - id: feeling
     name: { kor: 느낌, pli: vedana, en: feeling }
     description: { kor: 마음은 법체로 하나이지만 주로 일어나느 곳인 탄생지에 따라 4가지로 나눕니다. }
     groups: {somanassa, domanassa, upekkha, sukha, dukkha}
   - id: hetuka
-    name: { kor: 원인, pli: hetu, en: cause }
+    name: { kor: 뿌리, pli: hetu, en: cause }
     description: { kor: 마음은 법체로 하나이지만 주로 일어나느 곳인 탄생지에 따라 4가지로 나눕니다. }
     groups: { ahetuka, ekahetuka, dvihetuka, tihetuka}
-  - id: bhumi
-    name: { kor: 탄생지, pli: bhūmi, en: birthplace }
-    description: { kor: 마음은 법체로 하나이지만 주로 일어나느 곳인 탄생지에 따라 4가지로 나눕니다. }
-    groups: { kammavacara, rupavacara, arupavacara, lokuttara }
   - id: beauty
     name: { kor: 아름다움, pli: sobhana}
     description: { kor: 마음은 법체로 하나이지만 주로 일어나느 곳인 탄생지에 따라 4가지로 나눕니다. }
     groups: { ugly, beautiful }
   
-
-    
 kammavacara:
   - id: kammavacara
     name: { kor: 욕계 마음, pli: kammavacara, en: kamma-vacara }

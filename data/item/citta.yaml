@@ -71,6 +71,7 @@
     pli: ''
     en: ''
   groups: {citta, kammavacara, akusala, kamma-akusala, ugly, upekkha, ekahetuka, moha-mula}
+  description: 어리석음에 뿌리한 불선업을 짓는 마음
 
 - name:
     kor: 평온과 함께하고 들뜸과 결합한 마음

@@ -4,7 +4,7 @@
   classification: citta.yaml#citta
 
 - id: ugly
-  name: { kor: 아름답지 않은 마음}
+  name: { kor: 아름답지않은 마음}
   item: citta.yaml
   classification: citta.yaml#ugly
 
@@ -34,27 +34,27 @@
   classification: citta.yaml#lokuttara
   
 - id: akusala
-  name: { kor: 불선 마음 }
+  name: { kor: 불선업 짓는 마음 }
   item: citta.yaml
   classification: citta.yaml#akusala
 
 - id: kusala
-  name: { kor: 선 마음 }
+  name: { kor: 선업 짓는 마음 }
   item: citta.yaml
   classification: citta.yaml#kusala
 
 - id: akusala-vipaka
-  name: { kor: 불선과보의 마음 }
+  name: { kor: 불선 과보 마음 }
   item: citta.yaml
   classification: citta.yaml#vipaka
 
 - id: kusala-vipaka
-  name: { kor: 선과보의 마음 }
+  name: { kor: 선 과보 마음 }
   item: citta.yaml
   classification: citta.yaml#vipaka
 
 - id: kiriya
-  name: { kor: 작용하는 마음 }
+  name: { kor: 작용 마음 }
   item: citta.yaml
   classification: citta.yaml#kiriya
 
@@ -86,22 +86,22 @@
 
 ####
 - id: ahetuka
-  name: { kor: 원인 없는 마음 }
+  name: { kor: 뿌리없는 마음 }
   item: citta.yaml
   classification: citta.yaml#ahetuka
 
 - id: ekahetuka
-  name: { kor: 한가지 원인 마음 }
+  name: { kor: 한가지 뿌리 마음 }
   item: citta.yaml
   classification: citta.yaml#ahetuka
 
 - id: dvihetuka
-  name: { kor: 두가지 원인 마음 }
+  name: { kor: 두가지 뿌리 마음 }
   item: citta.yaml
   classification: citta.yaml#ahetuka
 
 - id: tihetuka
-  name: { kor: 세가지 원인 마음 }
+  name: { kor: 세가지 뿌리 마음 }
   item: citta.yaml
   classification: citta.yaml#ahetuka
 
